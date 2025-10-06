@@ -69,7 +69,6 @@ public class PlayerAttackController : MonoBehaviour
             SetHandsFlip(aimDirection);
             SetGunPose(aimDirection);
 
-            BHAnimator.SetBool("isWalking", true);
 
 
             

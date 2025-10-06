@@ -3986,6 +3986,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8801060140602679488, guid: f30a811547055324f8d10d1b54c638d1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801060140602679488, guid: f30a811547055324f8d10d1b54c638d1, type: 3}
       propertyPath: BHAnimator
       value: 
       objectReference: {fileID: 348030640}
