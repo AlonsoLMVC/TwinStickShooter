@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 
 
@@ -49,10 +50,36 @@ public class NPCManager : MonoBehaviour
 
     public void SpawnNPC()
     {
+        GetScreenBounds();
+
         for (int i = m_NPCList.Count; i < m_maxNPCAmount; i++)
         {
             GameObject temp = Instantiate(m_NPCPrefab);
             m_NPCList.Add(temp.GetComponent<NPCController>());
+
+            int spawnSide = Random.Range(0, 4);
+            Vector2 spawnPosition = Vector2.zero;
+
+            switch (spawnSide)
+            {
+                case 0:
+                    spawnPosition = new Vector2(m_horizontalBounds.y, Random.Range(m_verticalBounds.x, m_verticalBounds.y));
+                    break;
+                case 1:
+                    spawnPosition = new Vector2(m_horizontalBounds.x, Random.Range(m_verticalBounds.x, m_verticalBounds.y));
+                    break;
+                case 2:
+                    spawnPosition = new Vector2(Random.Range(m_horizontalBounds.x, m_horizontalBounds.y), m_horizontalBounds.y);
+                    break;
+                case 3:
+                    spawnPosition = new Vector2(Random.Range(m_horizontalBounds.x, m_horizontalBounds.y), m_verticalBounds.x);
+                    break;
+            }
+
+            GameObject newObject = Instantiate(m_NPCPrefab);
+            newObject.transform.position = spawnPosition;
+
+            m_NPCList.Add(newObject.GetComponent<NPCController>());
         }
 
 
@@ -63,5 +90,18 @@ public class NPCManager : MonoBehaviour
 
     }
     
+    void GetScreenBounds()
+    {
+        float verticalBounds = Camera.main.orthographicSize;
+        float horizontalBounds = verticalBounds * Screen.width / Screen.height;
+
+        float tempVertical = verticalBounds + m_spawnPadding;
+        float tempHorizontal = horizontalBounds + m_spawnPadding;
+
+        Vector2 currentCameraPosition = Camera.main.transform.position;
+
+        m_verticalBounds = new Vector2(currentCameraPosition.y - tempVertical, currentCameraPosition.y + tempVertical);
+        m_horizontalBounds = new Vector2(currentCameraPosition.x - tempVertical, currentCameraPosition.x + tempVertical);
+    }
     
 }

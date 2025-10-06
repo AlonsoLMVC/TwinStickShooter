@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 68951291771798298}
   - component: {fileID: 4811585001119227905}
   - component: {fileID: 7613939090440650623}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,8 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3571478979058254947}
   - component: {fileID: 4402154095138717998}
-  - component: {fileID: 6768219931158766120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,24 +167,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6768219931158766120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5535347807794739853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a48f29907183547dbb268b7863761003, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_transform: {fileID: 0}
-  m_health: 100
-  m_movementSpeed: 1
-  m_attackDamage: 5
-  m_targetMoveLocation: {x: 0, y: 0}
-  m_damageCooldown: 0.25
 --- !u!1 &6404659243011114896
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6314371091942534529}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1974968564517417109}
   - component: {fileID: 6864812314991059985}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
